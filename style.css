@@ -1,0 +1,66 @@
+body{
+    background-color: rgb(170, 121, 215);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.container{
+    background-color: white;
+    border-radius: 10px;
+    width: 400px;
+}
+
+.header{
+    background-color: rgb(241, 238, 238);
+    padding: 20px 40px;
+    border-bottom: 2px solid rgb(207, 202, 202);
+    border-radius: 10px;
+}
+
+.form{
+    padding: 30px 40px;
+}
+
+.form-control{
+    margin-bottom: 10px;
+    padding-bottom: 20px;
+
+}
+
+.form-control label{
+    margin-bottom: 10px;
+}
+
+
+.form-control input{
+    border : 2px solid gray;
+    border-radius: 5px;
+    width: 100%;
+
+}
+
+.form button{
+    background-color: rgb(160, 85, 231);
+    width: 100%;
+    padding: 10px;
+    margin-top: 20px;
+    border-radius: 5px;
+    color: white;
+}
+
+.form-control small{
+visibility: hidden;
+color: red;
+}
+
+.form-control.error small{
+    visibility: visible;
+}
+
+.form-control.error input{
+    border-color : red;
+}
+.form-control.success input{
+    border-color: green;
+}

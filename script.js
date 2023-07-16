@@ -12,10 +12,17 @@ const email = document.getElementById('email');
 const password = document.getElementById('password');
 const password2 = document.getElementById('password2');
 
+const message = document.getElementById('message');
 
+let etas = false;
 form.addEventListener('submit' , (e) => {
     e.preventDefault();
     checkInputs();
+    if(etas){
+        message.innerText = "Account created successfully";
+        setTimeout(()=>{message.innerText = ""},3000);
+        form.reset();
+    }
 })
 
 function checkInputs() {
@@ -25,31 +32,41 @@ function checkInputs() {
     const password2Value = password2.value.trim();
 
     if(usernameValue === ''){
-        setErrorFor(username,'Username is empty')
+        setErrorFor(username,'Username is empty');
+        etas = false;
+    
     }
     else {
-        setSuccessFor(username)
+        setSuccessFor(username);
+        etas = true
     }
      if( !isEmail(emailValue)){
-        setErrorFor(email,'Invalid Email')
+        setErrorFor(email,'Invalid Email');
+        etas = false;
     }
     else {
-        setSuccessFor(email)
+        setSuccessFor(email);
+        etas = true
     }
 
     if(passwordValue === ''){
-        setErrorFor(password,'Password is empty')
+        setErrorFor(password,'Password is empty');
+        etas = false;
     }else{
-        setSuccessFor(password)
+        setSuccessFor(password);
+        etas = true
     }
     if(password2Value === ''){
-        setErrorFor(password2, 'Password 2 cannot be empty')
+        setErrorFor(password2, 'Password 2 cannot be empty');
+        etas = false;
     }else if (passwordValue !== password2Value){
-        setErrorFor(password2,'Password not matching')
+        setErrorFor(password2,'Password not matching');
+        etas = false;
     }
     else{
         setSuccessFor(password);
-        setSuccessFor(password2)
+        setSuccessFor(password2);
+        etas = true
     }
 
 }
